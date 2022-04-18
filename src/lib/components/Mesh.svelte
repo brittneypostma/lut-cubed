@@ -1,6 +1,5 @@
 <script>
-	import { Mesh } from 'svelte-cubed';
-	export let geometry = null;
+	import { Mesh } from 'svelte-cubed'
 </script>
 
-<Mesh {geometry} />
+<Mesh {...$$restProps} />
