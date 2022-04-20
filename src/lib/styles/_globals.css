@@ -1,0 +1,21 @@
+body {
+  font: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: var(--font-heading);
+}
+
+button {
+  font: var(--font-heading);
+  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: var(--font-weight-7);
+  display: flex;
+  align-items: center;
+  background: hsl(175, 100%, 34%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}

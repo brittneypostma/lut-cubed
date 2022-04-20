@@ -15,7 +15,8 @@ const config = {
       resolve: {
         alias: {
           '@components': '/src/lib/components',
-          '@lib': '/src/lib'
+          '@lib': '/src/lib',
+          '@styles': '/src/lib/styles',
         }
       }
     }

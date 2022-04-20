@@ -5,47 +5,19 @@
 	import Orbit from '@components/Orbit.svelte'
 	import AmbientLight from '@components/lights/AmbientLight.svelte'
 	import DirectionalLight from '@components/lights/DirectionalLight.svelte'
-	import { BoxGeometry, MeshPhysicalMaterial } from 'three'
-	import { onFrame } from 'svelte-cubed'
-	let width: number = 1
-	let height: number = 1
-	let depth: number = 1
-
-	let spin = 1
-
-	onFrame(() => {
-		spin += 0.01
-	})
+	import { BoxGeometry, MeshStandardMaterial } from 'three'
 </script>
 
 <div class="controls">
-	<label>
-		Width:
-		<input type="range" min={0.1} max={3} step={0.1} bind:value={width} />
-	</label>
-	<label>
-		Height:
-		<input type="range" min={0.1} max={3} step={0.1} bind:value={height} />
-	</label>
-	<label>
-		Depth:
-		<input type="range" min={0.1} max={3} step={0.1} bind:value={depth} />
-	</label>
+	<button>Refresh</button>
 </div>
 
-<!-- <svelte:window on:click={() => console.log('click')} /> -->
-
-<Canvas antialias background="gray">
+<Canvas antialias background="hsl(198, 45%, 10%)">
 	<Mesh
-		rotation={[0, spin, 0]}
-		scale={[width, height, depth]}
+		scale={[1, 1, 1]}
 		geometry={new BoxGeometry()}
-		material={new MeshPhysicalMaterial({
-			color: '#049ef4',
-			emissive: 'black',
-			reflectivity: 0.5,
-			roughness: 1,
-			fog: true
+		material={new MeshStandardMaterial({
+			color: 'hsl(175, 100%, 34%)'
 		})}
 	/>
 	<PerspectiveCamera position={[1, 1, 3]} />
@@ -58,10 +30,5 @@
 	.controls {
 		position: absolute;
 		z-index: 10;
-	}
-
-	label {
-		display: flex;
-		align-items: center;
 	}
 </style>
