@@ -8,19 +8,8 @@
 	import { BoxGeometry, MeshStandardMaterial } from 'three'
 </script>
 
-<div class="controls">
-	<button>Refresh</button>
-</div>
-
-<Canvas antialias background="hsl(198, 45%, 10%)">
-	<Mesh
-		scale={[1, 1, 1]}
-		geometry={new BoxGeometry()}
-		material={new MeshStandardMaterial({
-			color: 'hsl(175, 100%, 34%)'
-		})}
-	/>
-	<PerspectiveCamera position={[1, 1, 3]} />
+<Canvas antialias alpha background="hsl(198, 45%, 10%)">
+	<PerspectiveCamera position={[100, 100, 100]} />
 	<Orbit />
 	<AmbientLight intensity={0.5} />
 	<DirectionalLight />
